@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Docify</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/interact-yugal/yugalone/main/docify/branding/Docs-500px-fit.png">
+
+  <!-- Unified, shared stylesheet -->
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+  <nav class="top-nav">
+    <div class="nav-inner">
+      <a href="https://www.yugal.one">yugal.one</a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="header-branding">
+      <a href="https://www.yugal.one/docify" class="app-logo-link">
+        <img src="https://raw.githubusercontent.com/interact-yugal/yugalone/main/docify/branding/Docify-500px-fit.svg" alt="Docify logo" class="app-logo">
+      </a>
+    </div>
+    <div class="subtitle">[ DEPRECATED ]</div>
+  </header>
+
+  <main>
+    <p>
+      Docify was conceived as an advanced, fully functional document generation and workflow-sharing web application. Designed to automate and streamline complex document pipelines, Docify was built from scratch as a single-page application (SPA) using Google Apps Script. It successfully showcased the ability to stitch together bespoke interfaces with Google Workspace and Firebase Firestore, offering users a dedicated tool for managing high-volume document creation.
+    </p>
+
+    <p>
+      Despite its functional success, Docify was ultimately sunsetted because its underlying architecture was leading towards compounding technical debt. Building an enterprise-level SaaS relying entirely on bespoke scripting without natively scalable infrastructure meant constantly battling strict execution quotas and hitting the ceiling of unstructured environments. As the codebase expanded to juggle between authentication, licensing, quota management, and intricate workflows, the maintenance burden skyrocketed.
+    </p>
+
+    <p>
+      While it succeeded brilliantly as a proof of concept, Docify ultimately required a transition to dedicated cloud infrastructure to support its true scale.
+    </p>
+
+    <p>
+      <a href="https://github.com/interact-yugal/Docify" class="secondary" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGfVYYC7NUIipL3ScGCyAtTzJAMvPHo81XvtdLDvgKhzW56Q/viewform?usp=header" class="secondary" target="_blank" rel="noopener">Drop a message</a>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script>
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      lerp: 0.1
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  </script>
+</body>
+</html>

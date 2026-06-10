@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yugal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/interact-yugal/yugalone/main/branding/alternate_email_500dp_000000_FILL1_wght400_GRAD0_opsz48.png">
+
+  <!-- Unified, shared stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav class="top-nav">
+    <div class="nav-inner">
+      <a href="https://www.yugal.one">yugal.one</a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="header-branding">
+      <div class="title">Yugal</div>
+    </div>
+  </header>
+
+  <main>
+    <p>
+      My experience across diverse organizational functions&mdash;finance, accounting, and auditing&mdash;revealed a crucial gap: teams needed reliable workflow automation, but most solutions were either too rigid or too complex to implement. That insight pushed me toward building systems that translate real business logic into scalable enterprise workflows.
+    </p>
+
+    <p>
+      Instead of taking a purely traditional development path, I leaned into a citizen-developer mindset&mdash;pairing no-code platforms with targeted scripting, structured data design, and automation frameworks to solve operational problems quickly and sustainably. Over the years, I deconstructed the functional architecture of major enterprise systems to identify design patterns that could be reimagined for no-code platforms.
+    </p>
+
+    <h2>Products</h2>
+    <!-- Replaced inline style margin-bottom with structured utility class -->
+    <div class="header-branding mb-24">
+      <a href="collab/" class="app-logo-link">
+        <img src="https://raw.githubusercontent.com/interact-yugal/yugalone/main/collab/branding/Collab-500px-fit.svg" alt="Collab logo" class="app-logo">
+      </a>
+      <!-- Add future products here easily, keeping structure perfectly aligned -->
+    </div>
+
+    <h2>Core Competencies</h2>
+    <ul>
+      <li>System design mindset: Enterprise patterns reimagined for no-code architecture&mdash;relational structure, automation logic, and governance. Deconstructed enterprise systems to identify patterns that could be rebuilt with targeted scripting and structured data design.</li>
+      <li>Operational grounding: Built from firsthand experience in finance and cross-functional workflows. Understanding how inventory, production, documentation, and finance often live in separate systems, forcing teams to bridge gaps manually.</li>
+      <li>Products over projects: Reusable workflows and scalable templates designed as a product, not one-off implementations. Blending no-code tooling with relational modeling and automation frameworks for quick deployment without losing structure.</li>
+    </ul>
+
+    <h2>Philosophy</h2>
+    <p>
+      Minimalism, for me, is not a design preference&mdash;it is a way of living and working. It means stripping away what is unnecessary so that what truly matters becomes obvious, whether in how a day is structured, a decision is made, or a system is designed. The same mindset that avoids clutter in interfaces also avoids clutter in thinking: clear priorities, fewer moving parts, and a strong bias toward simplicity that still respects real-world complexity. The approach is simple: identify the gap between what businesses need and what existing tools provide, then build scalable solutions using accessible technology that don't sacrifice enterprise-grade functionality.
+    </p>
+
+    <p>
+      This life choice naturally shows up in the things built around it. The clean layouts, limited surfaces, and deliberate use of space in both my web presence and product interfaces are just visible expressions of a deeper principle: clarity over noise, intent over decoration, function over abstraction. Minimalism, in that sense, is less about how something looks and more about how it behaves&mdash;how quickly someone can understand it, trust it, and get out of its way to focus on their actual work.
+    </p>
+
+    <h2>Interests</h2>
+    <p>
+      No-code platforms &middot; Citizen development &middot; Workflow automation &middot; ERP/CRM &middot; System design &middot; API integration &middot; Relational modeling &middot; Financial markets &middot; Time value of money &middot; Economics &middot; Cricket &middot; Walking
+    </p>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGfVYYC7NUIipL3ScGCyAtTzJAMvPHo81XvtdLDvgKhzW56Q/viewform?usp=header" class="secondary" target="_blank" rel="noopener">Drop a message</a>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script>
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      lerp: 0.1
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  </script>
+</body>
+</html>

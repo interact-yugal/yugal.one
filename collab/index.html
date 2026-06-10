@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collab</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/interact-yugal/yugalone/main/collab/branding/Collab-500px-fit.png">
+
+  <!-- Unified, shared stylesheet -->
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+  <nav class="top-nav">
+    <div class="nav-inner">
+      <a href="https://www.yugal.one">yugal.one</a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="header-branding">
+      <a href="https://www.yugal.one/collab" class="app-logo-link">
+        <img src="https://raw.githubusercontent.com/interact-yugal/yugalone/main/collab/branding/Collab-500px-fit.svg" alt="Collab logo" class="app-logo">
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <p>
+      Experience across finance, accounting, and auditing surfaced a recurring pattern: teams needed dependable workflow automation, but tools were either too rigid or too complex to implement. That gap led to building Collab&mdash;a system at the intersection of finance, operations, and design that turns real business logic into scalable, no-code workflows.
+    </p>
+
+    <p>
+      The problem is fundamental: organizations run on interconnected workflows, but most tools force teams into fragmented systems. Instead of juggling separate applications for contacts, inventory, production, accounting, and documentation, Collab unifies everything in one place&mdash;where data, processes, and teams operate seamlessly, and each workflow flows naturally into the next.
+    </p>
+
+    <p>
+      Built on a multi-tenant architecture, each organization gets its own isolated environment with centralized governance where it matters. System and public servers maintain common logic and controlled collaboration, while client servers handle operational workloads with strict data partitioning. Layered security&mdash;combining authentication, license-based permissions, and hybrid server design&mdash;ensures every action is authorized, auditable, and role-aligned.
+    </p>
+
+    <p>
+      The result: enterprise-grade structure without traditional development overhead. Powered by relational modeling, automated workflows, and standardized design patterns, Collab lets organizations deploy quickly, scale cleanly, and maintain operational integrity&mdash;staying practical as they grow, without sacrificing the flexibility to evolve.
+    </p>
+
+    <div class="podcast-section">
+      <div class="podcast-label">Featured Podcast</div>
+      <!-- Custom, sleek, black & white native HTML5 Audio Player -->
+      <div class="custom-audio-player">
+        <audio id="podcast-audio" src="podcast.m4a" preload="metadata"></audio>
+        
+        <div class="player-controls">
+          <button class="play-pause-btn" id="play-btn" aria-label="Play/Pause">
+            <!-- Play SVG Icon -->
+            <svg id="play-svg" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <!-- Pause SVG Icon (hidden initially) -->
+            <svg id="pause-svg" viewBox="0 0 24 24" style="display: none;">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            </svg>
+          </button>
+          
+          <div class="player-meta">
+            <span class="podcast-title">Deep Dive: The Collab Architecture</span>
+            <span class="podcast-duration" id="podcast-dur">00:00</span>
+          </div>
+        </div>
+
+        <div class="player-progress-bar">
+          <span class="player-time-display" id="current-time">00:00</span>
+          <div class="progress-slider-container" id="slider-container">
+            <div class="progress-slider-filled" id="slider-filled"></div>
+            <input type="range" class="progress-slider-input" id="audio-progress" min="0" max="100" value="0">
+          </div>
+          <span class="player-time-display" id="total-time">00:00</span>
+        </div>
+      </div>
+    </div>
+
+    <p>
+      <a href="https://www.appsheet.com/newshortcut/bf93ddae-3058-4d7c-acee-fd0df4ad7178" target="_blank" rel="noopener">Explore Collab</a>
+    </p>
+
+    <h2>Operational Features</h2>
+    <ul>
+      <li>Contacts directory: Keep customers, vendors, and internal stakeholders in one controlled source of truth.</li>
+      <li>Inventory system: Track items, movements, and availability with advanced categorization and grouping. Maintain a clear timeline of each item's lifecycle and monitor dynamic buy and sell rates.</li>
+      <li>Bill of materials: Define products by listing required raw materials, and quantities for production.</li>
+      <li>Movement tracking: Track inventory movements on the fly.</li>
+      <li>Manufacturing: Manage production workflows that depend on real-time inventory and multi-level processes.</li>
+      <li>Chart of accounts: Enable advanced chart of accounts with dedicated banks and assets masters to accurately record and financial transactions.</li>
+      <li>Accounting: Connect financial outputs with inventory inputs so finance reflects operational reality.</li>
+      <li>Documents: Centralize your documents in a single hub that links to all platform systems, streamlining context, collaboration, and document flow.</li>
+      <li>Tickets: Manage, track, and resolve internal and external requests, tasks, or issues efficiently to ensure timely support.</li>
+    </ul>
+
+    <p>
+      Deploy quickly, scale cleanly, and keep operational integrity&mdash;without traditional development overhead. Designed for connected workflows across teams and functions to standardize repeatable operations with structured logic and controlled execution paths.
+    </p>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGfVYYC7NUIipL3ScGCyAtTzJAMvPHo81XvtdLDvgKhzW56Q/viewform?usp=header" class="secondary" target="_blank" rel="noopener">Drop a message</a>
+      <a href="https://www.appsheet.com/appinfo/privacypolicy?appId=bf93ddae-3058-4d7c-acee-fd0df4ad7178" class="secondary" target="_blank" rel="noopener">Privacy Policy</a>
+      <a href="https://www.appsheet.com/appinfo/termsofuse?appId=bf93ddae-3058-4d7c-acee-fd0df4ad7178" class="secondary" target="_blank" rel="noopener">Terms of Service</a>
+      <a href="https://www.appsheet.com/oss/notices" class="secondary" target="_blank" rel="noopener">Licenses</a>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script>
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      lerp: 0.1
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // Audio Player Functionality
+    const audio = document.getElementById('podcast-audio');
+    const playBtn = document.getElementById('play-btn');
+    const playSvg = document.getElementById('play-svg');
+    const pauseSvg = document.getElementById('pause-svg');
+    const sliderContainer = document.getElementById('slider-container');
+    const sliderFilled = document.getElementById('slider-filled');
+    const progressInput = document.getElementById('audio-progress');
+    const currentTimeDisp = document.getElementById('current-time');
+    const totalTimeDisp = document.getElementById('total-time');
+    const podcastDurDisp = document.getElementById('podcast-dur');
+
+    function formatTime(secs) {
+      const minutes = Math.floor(secs / 60);
+      const seconds = Math.floor(secs % 60);
+      return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    audio.addEventListener('loadedmetadata', () => {
+      const formattedTotal = formatTime(audio.duration);
+      totalTimeDisp.textContent = formattedTotal;
+      podcastDurDisp.textContent = formattedTotal;
+    });
+
+    // Fallback if metadata is already loaded
+    if (audio.readyState >= 1) {
+      const formattedTotal = formatTime(audio.duration);
+      totalTimeDisp.textContent = formattedTotal;
+      podcastDurDisp.textContent = formattedTotal;
+    }
+
+    playBtn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        playSvg.style.display = 'none';
+        pauseSvg.style.display = 'block';
+      } else {
+        audio.pause();
+        playSvg.style.display = 'block';
+        pauseSvg.style.display = 'none';
+      }
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      const percentage = (audio.currentTime / audio.duration) * 100;
+      progressInput.value = percentage || 0;
+      sliderFilled.style.width = `${percentage}%`;
+      currentTimeDisp.textContent = formatTime(audio.currentTime);
+    });
+
+    progressInput.addEventListener('input', (e) => {
+      const seekTime = (e.target.value / 100) * audio.duration;
+      audio.currentTime = seekTime;
+      sliderFilled.style.width = `${e.target.value}%`;
+    });
+
+    audio.addEventListener('ended', () => {
+      playSvg.style.display = 'block';
+      pauseSvg.style.display = 'none';
+      progressInput.value = 0;
+      sliderFilled.style.width = '0%';
+      currentTimeDisp.textContent = '00:00';
+    });
+  </script>
+</body>
+</html>
