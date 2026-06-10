@@ -92,47 +92,6 @@
       <li>Tickets: Manage, track, and resolve internal and external requests, tasks, or issues efficiently to ensure timely support.</li>
     </ul>
 
-    <h2>Architecture</h2>
-
-    <p>
-      Collab is built on a multi-tenant architecture where each organization
-      operates within its own isolated server. Data remains partitioned at the
-      account level while access is controlled through role-based licenses.
-    </p>
-
-    <ul>
-      <li>System server: Shared governance layer containing core platform logic.</li>
-      <li>Public servers: Shared collaboration layer for approved public workflows and data.</li>
-      <li>Client servers: Dedicated operational environment owned and managed by an organization.</li>
-    </ul>
-
-    <p>
-      Within each client server, organizations can create multiple accounts to
-      separate business units, projects, legal entities, or reporting periods.
-      Accounts may be perpetual for long-lived records or periodic for
-      period-controlled transactional activity.
-    </p>
-
-    <p>
-      For example, if Transaction T references Contact X, a user with access to
-      both records can view both Transaction T and Contact X. A user with access
-      only to Transaction T can view the transaction but cannot access Contact X.
-      References do not override security permissions.
-    </p>
-
-    <h2>Licensing</h2>
-    <p>
-      Collab uses a subscription-based licensing model that governs access across
-      servers and accounts. Each license defines what users can view, create,
-      update, and administer.
-    </p>
-
-    <ul>
-      <li>Viewer: Read-only access.</li>
-      <li>Editor: Create and update records.</li>
-      <li>Owner: Complete write access.</li>
-    </ul>
-
     <h2>Why Collab?</h2>
     <ul>
       <li>Enterprise functionality without enterprise complexity</li>
