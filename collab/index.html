@@ -1,16 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Collab</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/interact-yugal/yugal.one/main/collab/branding/Collab-500px-fit.png">
+
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+
   <nav class="top-nav">
     <div class="nav-inner">
       <a href="https://www.yugal.one">yugal.one</a>
@@ -20,93 +25,176 @@
   <header>
     <div class="header-branding">
       <a href="https://www.yugal.one/collab" class="app-logo-link">
-        <img src="https://raw.githubusercontent.com/interact-yugal/yugal.one/main/collab/branding/Collab-500px-fit.svg" alt="Collab logo" class="app-logo">
+        <img
+          src="https://raw.githubusercontent.com/interact-yugal/yugal.one/main/collab/branding/Collab-500px-fit.svg"
+          alt="Collab logo"
+          class="app-logo">
       </a>
     </div>
   </header>
 
   <main>
-    <p>
-      Experience across finance, accounting, and auditing surfaced a recurring pattern: teams needed dependable workflow automation, but tools were either too rigid or too complex to implement. That gap led to building Collab&mdash;a system at the intersection of finance, operations, and design that turns real business logic into scalable, no-code workflows.
-    </p>
 
-    <p>
-      The problem is fundamental: organizations run on interconnected workflows, but most tools force teams into fragmented systems. Instead of juggling separate applications for contacts, inventory, production, accounting, and documentation, Collab unifies everything in one place&mdash;where data, processes, and teams operate seamlessly, and each workflow flows naturally into the next.
-    </p>
+```
+<p>
+  Collab is a no-code business operations platform that unifies contacts,
+  inventory, manufacturing, accounting, documents, tickets, and workflows
+  in a single system.
+</p>
 
-    <p>
-      Built on a multi-tenant architecture, each organization gets its own isolated environment with centralized governance where it matters. System and public servers maintain common logic and controlled collaboration, while client servers handle operational workloads with strict data partitioning. Layered security&mdash;combining authentication, license-based permissions, and hybrid server design&mdash;ensures every action is authorized, auditable, and role-aligned.
-    </p>
+<p>
+  Built for growing organizations, Collab combines enterprise-grade
+  structure with practical workflow automation—helping teams manage
+  operations, maintain control, and scale without traditional development
+  overhead.
+</p>
 
-    <p>
-      The result: enterprise-grade structure without traditional development overhead. Powered by relational modeling, automated workflows, and standardized design patterns, Collab lets organizations deploy quickly, scale cleanly, and maintain operational integrity&mdash;staying practical as they grow, without sacrificing the flexibility to evolve.
-    </p>
+<div class="podcast-section">
+  <div class="podcast-label">AI Podcast</div>
 
-    <div class="podcast-section">
-      <div class="podcast-label">AI Podcast</div>
-      <div class="custom-audio-player">
-        <audio id="podcast-audio" src="podcast.m4a" preload="metadata"></audio>
-        
-        <div class="player-controls">
-          <button class="play-pause-btn" id="play-btn" aria-label="Play/Pause">
-            <svg id="play-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="5 3 19 12 5 21 5 3"></polygon>
-            </svg>
-            <svg id="pause-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
-              <rect x="6" y="4" width="4" height="16"></rect>
-              <rect x="14" y="4" width="4" height="16"></rect>
-            </svg>
-          </button>
-          
-          <div class="player-meta">
-            <span class="podcast-title">The Collab Experience</span>
-            <span class="podcast-duration" id="podcast-dur">00:00</span>
-          </div>
-        </div>
+  <div class="custom-audio-player">
+    <audio id="podcast-audio" src="podcast.m4a" preload="metadata"></audio>
 
-        <div class="player-progress-bar">
-          <span class="player-time-display" id="current-time">00:00</span>
-          <div class="progress-slider-container" id="slider-container">
-            <div class="progress-slider-filled" id="slider-filled"></div>
-            <input type="range" class="progress-slider-input" id="audio-progress" min="0" max="100" value="0">
-          </div>
-          <span class="player-time-display" id="total-time">00:00</span>
-        </div>
+    <div class="player-controls">
+      <button class="play-pause-btn" id="play-btn" aria-label="Play/Pause">
+        <svg id="play-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+
+        <svg id="pause-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+          <rect x="6" y="4" width="4" height="16"></rect>
+          <rect x="14" y="4" width="4" height="16"></rect>
+        </svg>
+      </button>
+
+      <div class="player-meta">
+        <span class="podcast-title">The Collab Experience</span>
+        <span class="podcast-duration" id="podcast-dur">00:00</span>
       </div>
     </div>
 
-    <p>
-      <a href="https://www.appsheet.com/newshortcut/bf93ddae-3058-4d7c-acee-fd0df4ad7178" target="_blank" rel="noopener">Explore Collab</a>
-    </p>
+    <div class="player-progress-bar">
+      <span class="player-time-display" id="current-time">00:00</span>
 
-    <h2>Operational Features</h2>
-    <ul>
-      <li>Contacts directory: Keep customers, vendors, and internal stakeholders in one controlled source of truth.</li>
-      <li>Inventory system: Track items, movements, and availability with advanced categorization and grouping. Maintain a clear timeline of each item's lifecycle and monitor dynamic buy and sell rates.</li>
-      <li>Bill of materials: Define products by listing required raw materials, and quantities for production.</li>
-      <li>Movement tracking: Track inventory movements on the fly.</li>
-      <li>Manufacturing: Manage production workflows that depend on real-time inventory and multi-level processes.</li>
-      <li>Chart of accounts: Enable advanced chart of accounts with dedicated banks and assets masters to accurately record and financial transactions.</li>
-      <li>Accounting: Connect financial outputs with inventory inputs so finance reflects operational reality.</li>
-      <li>Documents: Centralize your documents in a single hub that links to all platform systems, streamlining context, collaboration, and document flow.</li>
-      <li>Tickets: Manage, track, and resolve internal and external requests, tasks, or issues efficiently to ensure timely support.</li>
-    </ul>
+      <div class="progress-slider-container" id="slider-container">
+        <div class="progress-slider-filled" id="slider-filled"></div>
+        <input
+          type="range"
+          class="progress-slider-input"
+          id="audio-progress"
+          min="0"
+          max="100"
+          value="0">
+      </div>
 
-    <p>
-      Deploy quickly, scale cleanly, and keep operational integrity&mdash;without traditional development overhead. Designed for connected workflows across teams and functions to standardize repeatable operations with structured logic and controlled execution paths.
-    </p>
+      <span class="player-time-display" id="total-time">00:00</span>
+    </div>
+  </div>
+</div>
+
+<p>
+  <a href="https://www.appsheet.com/newshortcut/bf93ddae-3058-4d7c-acee-fd0df4ad7178" target="_blank" rel="noopener">
+    Explore Collab
+  </a>
+</p>
+
+<h2>Core Capabilities</h2>
+
+<ul>
+  <li>Contacts & stakeholder management</li>
+  <li>Inventory & movement tracking</li>
+  <li>Bill of materials & manufacturing</li>
+  <li>Accounting & financial controls</li>
+  <li>Document management</li>
+  <li>Tickets & task tracking</li>
+  <li>Workflow automation</li>
+</ul>
+
+<h2>Architecture</h2>
+
+<p>
+  Collab is built on a multi-tenant architecture where each organization
+  operates within its own isolated server. Data remains partitioned at the
+  account level while access is controlled through role-based licenses.
+</p>
+
+<ul>
+  <li><strong>System Server</strong> — Shared governance layer containing core platform logic.</li>
+  <li><strong>Public Server</strong> — Shared collaboration layer for approved public workflows and data.</li>
+  <li><strong>Client Server</strong> — Dedicated operational environment owned and managed by an organization.</li>
+</ul>
+
+<p>
+  Within each client server, organizations can create multiple accounts to
+  separate business units, projects, legal entities, or reporting periods.
+  Accounts may be perpetual for long-lived records or periodic for
+  period-controlled transactional activity.
+</p>
+
+<p>
+  For example, if Transaction T references Contact X, a user with access to
+  both records can view both Transaction T and Contact X. A user with access
+  only to Transaction T can view the transaction but cannot access Contact X.
+  References do not override security permissions.
+</p>
+
+<h2>Licensing</h2>
+
+<p>
+  Collab uses a subscription-based licensing model that governs access across
+  servers and accounts. Each license defines what users can view, create,
+  update, and administer.
+</p>
+
+<ul>
+  <li><strong>Viewer</strong> — Read-only access.</li>
+  <li><strong>Editor</strong> — Create and update records.</li>
+  <li><strong>Owner</strong> — Full administrative control.</li>
+</ul>
+
+<h2>Why Collab</h2>
+
+<ul>
+  <li>Enterprise functionality without enterprise complexity</li>
+  <li>No-code deployment and customization</li>
+  <li>Integrated finance and operations</li>
+  <li>Secure multi-tenant architecture</li>
+  <li>Built to grow from small teams to large organizations</li>
+</ul>
+
+<p>
+  Collab transforms business logic into structured, scalable workflows—
+  connecting teams, data, and processes in a single operational platform.
+</p>
+```
+
   </main>
 
   <footer>
     <div class="footer-inner">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGfVYYC7NUIipL3ScGCyAtTzJAMvPHo81XvtdLDvgKhzW56Q/viewform?usp=header" class="secondary" target="_blank" rel="noopener">Drop a message</a>
-      <a href="https://www.appsheet.com/appinfo/privacypolicy?appId=bf93ddae-3058-4d7c-acee-fd0df4ad7178" class="secondary" target="_blank" rel="noopener">Privacy Policy</a>
-      <a href="https://www.appsheet.com/appinfo/termsofuse?appId=bf93ddae-3058-4d7c-acee-fd0df4ad7178" class="secondary" target="_blank" rel="noopener">Terms of Service</a>
-      <a href="https://www.appsheet.com/oss/notices" class="secondary" target="_blank" rel="noopener">Licenses</a>
-    </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGfVYYC7NUIipL3ScGCyAtTzJAMvPHo81XvtdLDvgKhzW56Q/viewform?usp=header" class="secondary" target="_blank" rel="noopener">
+        Drop a message
+      </a>
+
+```
+  <a href="https://www.appsheet.com/appinfo/privacypolicy?appId=bf93ddae-3058-4d7c-acee-fd0df4ad7178" class="secondary" target="_blank" rel="noopener">
+    Privacy Policy
+  </a>
+
+  <a href="https://www.appsheet.com/appinfo/termsofuse?appId=bf93ddae-3058-4d7c-acee-fd0df4ad7178" class="secondary" target="_blank" rel="noopener">
+    Terms of Service
+  </a>
+
+  <a href="https://www.appsheet.com/oss/notices" class="secondary" target="_blank" rel="noopener">
+    Licenses
+  </a>
+</div>
+```
+
   </footer>
 
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
   <script>
     const lenis = new Lenis({
       duration: 1.2,
@@ -120,14 +208,13 @@
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
+
     requestAnimationFrame(raf);
 
-    // Audio Player Functionality
     const audio = document.getElementById('podcast-audio');
     const playBtn = document.getElementById('play-btn');
     const playSvg = document.getElementById('play-svg');
     const pauseSvg = document.getElementById('pause-svg');
-    const sliderContainer = document.getElementById('slider-container');
     const sliderFilled = document.getElementById('slider-filled');
     const progressInput = document.getElementById('audio-progress');
     const currentTimeDisp = document.getElementById('current-time');
@@ -145,12 +232,6 @@
       totalTimeDisp.textContent = formattedTotal;
       podcastDurDisp.textContent = formattedTotal;
     });
-
-    if (audio.readyState >= 1) {
-      const formattedTotal = formatTime(audio.duration);
-      totalTimeDisp.textContent = formattedTotal;
-      podcastDurDisp.textContent = formattedTotal;
-    }
 
     playBtn.addEventListener('click', () => {
       if (audio.paused) {
@@ -185,5 +266,6 @@
       currentTimeDisp.textContent = '00:00';
     });
   </script>
+
 </body>
 </html>
