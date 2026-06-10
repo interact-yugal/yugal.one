@@ -4,17 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Collab</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/interact-yugal/yugal.one/main/collab/branding/Collab-500px-fit.png">
-
-  <!-- Unified, shared stylesheet -->
   <link rel="stylesheet" href="../styles.css">
 </head>
-
 <body>
   <nav class="top-nav">
     <div class="nav-inner">
@@ -49,19 +44,17 @@
 
     <div class="podcast-section">
       <div class="podcast-label">Featured Podcast</div>
-      <!-- Custom, sleek, black & white native HTML5 Audio Player -->
       <div class="custom-audio-player">
         <audio id="podcast-audio" src="podcast.m4a" preload="metadata"></audio>
         
         <div class="player-controls">
           <button class="play-pause-btn" id="play-btn" aria-label="Play/Pause">
-            <!-- Play SVG Icon -->
-            <svg id="play-svg" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z"/>
+            <svg id="play-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
             </svg>
-            <!-- Pause SVG Icon (hidden initially) -->
-            <svg id="pause-svg" viewBox="0 0 24 24" style="display: none;">
-              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            <svg id="pause-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
             </svg>
           </button>
           
@@ -127,7 +120,6 @@
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
     requestAnimationFrame(raf);
 
     // Audio Player Functionality
@@ -154,7 +146,6 @@
       podcastDurDisp.textContent = formattedTotal;
     });
 
-    // Fallback if metadata is already loaded
     if (audio.readyState >= 1) {
       const formattedTotal = formatTime(audio.duration);
       totalTimeDisp.textContent = formattedTotal;
