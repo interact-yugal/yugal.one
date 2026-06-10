@@ -1,5 +1,5 @@
-/* STREAMING_CHUNK:Configuring global CSS styles... /
-/ ==========================================================================
+/* STREAMING_CHUNK:Configuring global CSS styles... */
+/* ==========================================================================
 Centralized Stylesheet - yugal.one
 Theme: Minimalist Monochrome (Black & White)
 Main Font: Inter
@@ -18,11 +18,11 @@ overflow: hidden;
 
 /* Global Reset */
 
-{
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
 
 /* Base Body Style */
 body {
@@ -155,8 +155,8 @@ position: absolute;
 left: 0;
 }
 
-/* Custom Minimalist Audio Player /
-/ STREAMING_CHUNK:Styling the podcast section and custom audio player... */
+/* Custom Minimalist Audio Player */
+/* STREAMING_CHUNK:Styling the podcast section and custom audio player... */
 .podcast-section {
 margin: 32px 0;
 }
@@ -169,12 +169,14 @@ margin-bottom: 12px;
 color: #000000;
 }
 
-/* Removed border and background as requested /
+/* Removed border and background as requested */
 .custom-audio-player {
 display: flex;
 flex-direction: column;
-padding: 16px 0; / Adjusted padding to look good without border */
+padding: 16px 0; /* Adjusted padding to look good without border */
 gap: 12px;
+border: none;
+background: transparent;
 }
 
 .player-controls {
@@ -183,9 +185,9 @@ align-items: center;
 gap: 16px;
 }
 
-/* Adjusted play/pause button for the new outline SVG /
+/* Adjusted play/pause button for the new outline SVG */
 .play-pause-btn {
-background: transparent; / No background /
+background: transparent; /* No background */
 color: #000000;
 border: none;
 width: 40px;
@@ -195,13 +197,13 @@ display: flex;
 align-items: center;
 justify-content: center;
 transition: opacity 0.15s ease;
-padding: 0; / Remove default padding /
+padding: 0; /* Remove default padding */
 }
 .play-pause-btn:hover {
-opacity: 0.6; / Simple opacity hover effect /
+opacity: 0.6; /* Simple opacity hover effect */
 }
 .play-pause-btn svg {
-/ Using stroke instead of fill for the outline style */
+/* Using stroke instead of fill for the outline style */
 fill: none;
 stroke: currentColor;
 width: 24px;
@@ -232,13 +234,13 @@ gap: 12px;
 width: 100%;
 }
 
-/* Enforcing Inter font for timer displays /
+/* Enforcing Inter font for timer displays */
 .player-time-display {
 font-size: 11px;
-font-family: 'Inter', sans-serif; / Explicitly requesting Inter, then sans-serif fallback /
-font-variant-numeric: tabular-nums; / Critical for timers: makes numbers monospaced width even in variable fonts /
+font-family: 'Inter', sans-serif; /* Explicitly requesting Inter, then sans-serif fallback */
+font-variant-numeric: tabular-nums; /* Critical for timers: makes numbers monospaced width even in variable fonts */
 color: #666666;
-min-width: 35px; / Ensures the layout doesn't jump as time changes */
+min-width: 35px; /* Ensures the layout doesn't jump as time changes */
 }
 
 .progress-slider-container {
@@ -291,3 +293,4 @@ padding: 20px 24px;
 footer a {
 margin-right: 16px;
 }
+```
