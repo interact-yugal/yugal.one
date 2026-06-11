@@ -102,7 +102,7 @@
       <li>Layered security framework: Enterprise-grade security is enforced through a two-level process combining Google Sign-in with proprietary entity and license-level authentication.</li>
     </ul>
 
-    <h2 id="operational-features">Operational Features</h2>
+    <h2 id="operational-features">Features</h2>
     <ul>
       <li>Contacts directory: Keep customers, vendors, and internal stakeholders in one controlled source of truth.</li>
       <li>Inventory system: Track items, movements, and availability with advanced categorization and grouping. Maintain a clear timeline of each item's lifecycle and monitor dynamic buy and sell rates.</li>
@@ -146,11 +146,13 @@
     }
     requestAnimationFrame(raf);
 
-    // Smooth scrolling for anchor links utilizing Lenis
+    // Smooth scrolling for anchor links utilizing Lenis with offset
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        lenis.scrollTo(this.getAttribute('href'));
+        lenis.scrollTo(this.getAttribute('href'), {
+          offset: -100 // Adds a 100px buffer so the heading clears the fixed navbar
+        });
       });
     });
 
@@ -167,7 +169,7 @@
     const podcastDurDisp = document.getElementById('podcast-dur');
 
     function formatTime(secs) {
-      if (isNaN(secs)) return "00:00"; // Handle NaN
+      if (isNaN(secs)) return "00:00"; 
       const minutes = Math.floor(secs / 60);
       const seconds = Math.floor(secs % 60);
       return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
@@ -228,22 +230,18 @@
             const selectedLang = e.target.value;
             const wasPlaying = !audio.paused;
             
-            // Set the appropriate source file
             if (selectedLang === 'en') {
                 audio.src = 'audio-podcast-english.m4a';
             } else if (selectedLang === 'hi') {
                 audio.src = 'audio-podcast-hindi.m4a';
             }
             
-            // Reload loads the new file
             audio.load();
             
-            // Reset visual elements
             progressInput.value = 0;
             sliderFilled.style.width = '0%';
             currentTimeDisp.textContent = '00:00';
             
-            // Auto play if it was already playing, otherwise keep it paused
             if(wasPlaying) {
                  audio.play();
                  playSvg.style.display = 'none';
