@@ -330,3 +330,34 @@ padding: 20px 24px;
 footer a {
 margin-right: 16px;
 }
+
+/* ==========================================================================
+   Responsive Adjustments (Mobile & Tablet)
+   ========================================================================== */
+
+@media screen and (max-width: 600px) {
+  /* Stack the logo and the navigation links vertically */
+  .nav-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* Allow the individual tabs to wrap to a new line if needed */
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px; 
+  }
+
+  /* Since the stacked navigation bar is now taller, we increase the body 
+     padding so the top content doesn't get hidden underneath it */
+  body {
+    padding-top: 150px; 
+  }
+  
+  /* Increase the scroll buffer for headings so the taller mobile header 
+     doesn't cover them when clicking a tab */
+  h2 {
+    scroll-margin-top: 130px;
+  }
+}
