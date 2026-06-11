@@ -54,6 +54,23 @@ border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 max-width: 680px;
 margin: 0 auto;
 padding: 20px 24px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.nav-links {
+display: flex;
+gap: 20px;
+}
+.nav-tab {
+font-weight: 500;
+color: #666666;
+text-decoration: none;
+transition: color 0.2s ease;
+}
+.nav-tab:hover {
+color: #000000;
+opacity: 1; /* Override default anchor hover opacity for tabs */
 }
 
 /* Typography */
@@ -70,6 +87,7 @@ font-weight: 500;
 line-height: 1.4;
 margin: 60px 0 24px;
 letter-spacing: -0.01em;
+scroll-margin-top: 80px; /* Prevents the fixed header from covering the title when scrolled */
 }
 p {
 font-size: 16px;
