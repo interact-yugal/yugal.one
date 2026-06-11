@@ -44,8 +44,18 @@
 
     <div class="podcast-section">
       <div class="podcast-label">AI Podcast</div>
+      
+      <!-- New Language Segment Toggle Switch placed before the player -->
+      <div class="language-switch">
+          <input type="radio" id="lang-en" name="podcast-lang" value="en" checked>
+          <label for="lang-en">English</label>
+          
+          <input type="radio" id="lang-hi" name="podcast-lang" value="hi">
+          <label for="lang-hi">Hindi</label>
+      </div>
+
       <div class="custom-audio-player">
-        <audio id="podcast-audio" src="podcast.m4a" preload="metadata"></audio>
+        <audio id="podcast-audio" src="audio-podcast-english.m4a" preload="metadata"></audio>
         
         <div class="player-controls">
           <button class="play-pause-btn" id="play-btn" aria-label="Play/Pause">
@@ -145,21 +155,24 @@
     const podcastDurDisp = document.getElementById('podcast-dur');
 
     function formatTime(secs) {
+      if (isNaN(secs)) return "00:00"; // Handle NaN
       const minutes = Math.floor(secs / 60);
       const seconds = Math.floor(secs % 60);
       return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     }
 
-    audio.addEventListener('loadedmetadata', () => {
-      const formattedTotal = formatTime(audio.duration);
-      totalTimeDisp.textContent = formattedTotal;
-      podcastDurDisp.textContent = formattedTotal;
-    });
+    // Function to update duration displays
+    function updateDuration() {
+        const formattedTotal = formatTime(audio.duration);
+        totalTimeDisp.textContent = formattedTotal;
+        podcastDurDisp.textContent = formattedTotal;
+    }
+
+    // Listen for loadedmetadata which is fired when audio file changes
+    audio.addEventListener('loadedmetadata', updateDuration);
 
     if (audio.readyState >= 1) {
-      const formattedTotal = formatTime(audio.duration);
-      totalTimeDisp.textContent = formattedTotal;
-      podcastDurDisp.textContent = formattedTotal;
+       updateDuration();
     }
 
     playBtn.addEventListener('click', () => {
@@ -193,6 +206,41 @@
       progressInput.value = 0;
       sliderFilled.style.width = '0%';
       currentTimeDisp.textContent = '00:00';
+    });
+    
+    // Logic for Language Switcher
+    const languageRadios = document.querySelectorAll('input[name="podcast-lang"]');
+    
+    languageRadios.forEach(radio => {
+        radio.addEventListener('change', (e) => {
+            const selectedLang = e.target.value;
+            const wasPlaying = !audio.paused;
+            
+            // Set the appropriate source file
+            if (selectedLang === 'en') {
+                audio.src = 'audio-podcast-english.m4a';
+            } else if (selectedLang === 'hi') {
+                audio.src = 'audio-podcast-hindi.m4a';
+            }
+            
+            // Reload loads the new file
+            audio.load();
+            
+            // Reset visual elements
+            progressInput.value = 0;
+            sliderFilled.style.width = '0%';
+            currentTimeDisp.textContent = '00:00';
+            
+            // Auto play if it was already playing, otherwise keep it paused
+            if(wasPlaying) {
+                 audio.play();
+                 playSvg.style.display = 'none';
+                 pauseSvg.style.display = 'block';
+            } else {
+                 playSvg.style.display = 'block';
+                 pauseSvg.style.display = 'none';
+            }
+        });
     });
   </script>
 </body>
