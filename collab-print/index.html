@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collab Print</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/interact-yugal/yugal.one/main/branding/alternate_email_500dp_000000_FILL1_wght400_GRAD0_opsz48.png">
+  
+  <!-- Linking to the centralized stylesheet located in the parent directory -->
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+  <nav class="top-nav">
+    <div class="nav-inner">
+      <a href="https://www.yugal.one">yugal.one</a>
+      <div class="nav-links">
+        <a href="#features" class="nav-tab">Features</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="header-branding">
+      <a href="https://www.yugal.one/collab-print" class="app-logo-link">
+        <div class="title">Collab Print</div>
+      </a>
+    </div>
+    <div class="subtitle">Chrome Extension for AppSheet</div>
+  </header>
+
+  <main>
+    <p>
+      Introducing Collab Print&mdash;a lightweight Chrome extension that integrates directly with your AppSheet app.
+    </p>
+
+    <p>
+      Printing AppSheet views is finally effortless.
+    </p>
+
+    <h2 id="features">Features</h2>
+    <ul>
+      <li>Native print integration: Prepares a minimalist report directly from your app whenever you hit Cmd+P or Ctrl+P.</li>
+      <li>Professional layout: Injects the app name, app logo, view name, and print timestamp right at the top.</li>
+      <li>Native grouping & filtering: Captures active filters, searches, groupings, and aggregates directly from your current view.</li>
+      <li>100% local & secure: Processes all data strictly within your browser without ever transmitting your private information to external servers.</li>
+    </ul>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGfVYYC7NUIipL3ScGCyAtTzJAMvPHo81XvtdLDvgKhzW56Q/viewform?usp=header" class="secondary" target="_blank" rel="noopener">Drop a message</a>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script>
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      lerp: 0.1
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Smooth scrolling for anchor links utilizing Lenis with offset
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        lenis.scrollTo(this.getAttribute('href'), {
+          offset: -100 // Adds a 100px buffer so the heading clears the fixed navbar
+        });
+      });
+    });
+  </script>
+</body>
+</html>
