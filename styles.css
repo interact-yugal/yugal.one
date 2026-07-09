@@ -133,19 +133,19 @@ p {
   flex-shrink: 0;
 }
 
-.powered-by-wrapper {
+.branding-link {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
 }
 
-.powered-by-text {
-  font-size: 14px; 
-  color: #666666; 
+.branding-text {
+  font-size: 14px;
+  color: #666666;
   font-weight: 500;
 }
 
-.powered-by-logo {
+.branding-logo {
   width: 80px;
   height: auto;
 }
