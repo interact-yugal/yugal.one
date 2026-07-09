@@ -133,7 +133,7 @@ p {
   flex-shrink: 0;
 }
 
-.branding-link {
+.branding-wrapper {
   display: flex;
   align-items: center;
   gap: 16px;
