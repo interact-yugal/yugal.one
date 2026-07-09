@@ -3,7 +3,6 @@
    Theme: Minimalist Monochrome (Black & White)
    ========================================================================== */
 
-/* Lenis Smooth Scroll Essential CSS */
 html.lenis,
 html.lenis body {
   height: auto;
@@ -17,14 +16,12 @@ html.lenis body {
   overflow: hidden;
 }
 
-/* Global Reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Base Body Style */
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: #000000;
@@ -37,7 +34,6 @@ body {
   margin: 0 auto;
 }
 
-/* Navigation */
 .top-nav {
   position: fixed;
   top: 0;
@@ -80,7 +76,6 @@ body {
   opacity: 1;
 }
 
-/* Typography & Symmetrical Rhythm */
 h1,
 h2,
 p,
@@ -119,7 +114,6 @@ p {
   letter-spacing: 0.05em;
 }
 
-/* Branding & Headers */
 .header-branding {
   display: flex;
   align-items: center;
@@ -139,7 +133,6 @@ p {
   flex-shrink: 0;
 }
 
-/* Interactive Elements */
 a {
   color: #000000;
   text-decoration: none;
@@ -155,7 +148,6 @@ a.secondary {
   font-weight: 400;
 }
 
-/* Lists */
 ul {
   list-style: none;
   padding: 0;
@@ -175,7 +167,6 @@ li:before {
   left: 0;
 }
 
-/* Audio Player Section */
 .podcast-section {
   margin: 32px 0;
 }
@@ -279,7 +270,6 @@ li:before {
   border-radius: 2px;
 }
 
-/* Footer */
 footer {
   position: fixed;
   bottom: 0;
@@ -291,15 +281,23 @@ footer {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   border-top: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 1000;
 }
 
 .footer-inner {
   max-width: 680px;
   margin: 0 auto;
   padding: 20px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
 }
 
-/* Responsive */
+.footer-inner a {
+  margin-right: 0;
+  white-space: nowrap;
+}
+
 @media screen and (max-width: 600px) {
   .nav-inner {
     align-items: flex-start;
