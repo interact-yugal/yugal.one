@@ -136,7 +136,7 @@ p {
 .branding-wrapper {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
 }
 
 .branding-text {
