@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
 
   <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/interact-yugal/yugal.one/main/collab/branding/Collab-500px-fit.png">
   
@@ -67,13 +68,8 @@
         
         <div class="player-controls">
           <button class="play-pause-btn" id="play-btn" aria-label="Play/Pause">
-            <svg id="play-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="5 3 19 12 5 21 5 3"></polygon>
-            </svg>
-            <svg id="pause-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
-              <rect x="6" y="4" width="4" height="16"></rect>
-              <rect x="14" y="4" width="4" height="16"></rect>
-            </svg>
+            <span id="play-icon" class="material-symbols-rounded">play_circle</span>
+            <span id="pause-icon" class="material-symbols-rounded">pause_circle</span>
           </button>
           
           <div class="player-meta">
@@ -165,8 +161,8 @@
     // Audio Player Functionality
     const audio = document.getElementById('podcast-audio');
     const playBtn = document.getElementById('play-btn');
-    const playSvg = document.getElementById('play-svg');
-    const pauseSvg = document.getElementById('pause-svg');
+    const playIcon = document.getElementById('play-icon');
+    const pauseIcon = document.getElementById('pause-icon');
     const sliderContainer = document.getElementById('slider-container');
     const sliderFilled = document.getElementById('slider-filled');
     const progressInput = document.getElementById('audio-progress');
@@ -198,12 +194,12 @@
     playBtn.addEventListener('click', () => {
       if (audio.paused) {
         audio.play();
-        playSvg.style.display = 'none';
-        pauseSvg.style.display = 'block';
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'block';
       } else {
         audio.pause();
-        playSvg.style.display = 'block';
-        pauseSvg.style.display = 'none';
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
       }
     });
 
@@ -221,8 +217,8 @@
     });
 
     audio.addEventListener('ended', () => {
-      playSvg.style.display = 'block';
-      pauseSvg.style.display = 'none';
+      playIcon.style.display = 'block';
+      pauseIcon.style.display = 'none';
       progressInput.value = 0;
       sliderFilled.style.width = '0%';
       currentTimeDisp.textContent = '00:00';
@@ -250,11 +246,11 @@
             
             if(wasPlaying) {
                  audio.play();
-                 playSvg.style.display = 'none';
-                 pauseSvg.style.display = 'block';
+                 playIcon.style.display = 'none';
+                 pauseIcon.style.display = 'block';
             } else {
-                 playSvg.style.display = 'block';
-                 pauseSvg.style.display = 'none';
+                 playIcon.style.display = 'block';
+                 pauseIcon.style.display = 'none';
             }
         });
     });
