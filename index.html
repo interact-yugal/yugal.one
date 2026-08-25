@@ -4,16 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yugal</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/yugalone/yugal.one/main/branding/alternate_email_500dp_000000_FILL1_wght400_GRAD0_opsz48.png">
-
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
   <nav class="top-nav">
     <div class="nav-inner">
@@ -24,7 +20,6 @@
       </div>
     </div>
   </nav>
-
   <header>
     <div class="header-branding">
       <a href="https://www.yugal.one" class="app-logo-link">
@@ -32,49 +27,47 @@
       </a>
     </div>
   </header>
-
   <main>
     <p>
-      My experience across diverse organizational functions&mdash;finance, accounting, and auditing—revealed a crucial gap: teams needed reliable workflow automation, but most solutions were either too rigid or too complex to implement. That insight pushed me to lean into a citizen-developer mindset, focusing on translating real business logic into scalable enterprise workflows.
+      My experience across diverse organizational functions&mdash;finance, accounting, and auditing revealed a crucial gap: teams needed reliable workflow automation, but most solutions were either too rigid or too complex to implement. That insight pushed me to lean into a citizen-developer mindset, focusing on translating real business logic into scalable enterprise workflows.
     </p>
-
     <p>
-      At my core, I approach development with a strict system design mindset. By deconstructing the functional architecture of major enterprise applications, I identify foundational design patterns and reimagine them for AppSheet's no-code environment. This framework pairs AppSheet’s accessible tooling with targeted scripting, structured relational data modeling, and robust automation logic.
+      At my core, I approach development with a strict system design mindset. By deconstructing the functional architecture of major enterprise applications, I identify foundational design patterns and reimagine them for AppSheet's no-code environment. This framework pairs AppSheet s accessible tooling with targeted scripting, structured relational data modeling, and robust automation logic.
     </p>
-
     <p>
       The defining philosophy behind systems like Collab is prioritizing products over one-off projects. Instead of isolated implementations, I focus on engineering reusable workflows and scalable templates designed for quick deployment without sacrificing enterprise-grade governance. By stripping away the unnecessary and maintaining a strong bias toward simplicity, these solutions seamlessly balance clean, accessible design with the structural integrity required to handle real-world operational complexity.
     </p>
-
+    
     <h2 id="work">Work</h2>
-
     <div class="header-branding mb-24">
       <a href="collab" class="app-logo-link">
         <img src="https://raw.githubusercontent.com/yugalone/yugal.one/main/collab/branding/Collab-500px-fit.svg" alt="Collab logo" class="app-logo">
       </a>
-      
       <a href="https://about.appsheet.com" target="_blank" rel="noopener" class="branding-wrapper">
         <span class="branding-text">Powered by</span>
         <img src="https://raw.githubusercontent.com/yugalone/yugal.one/main/branding/AppSheet.svg" alt="AppSheet logo" class="branding-logo">
       </a>
     </div>
-
     <div class="header-branding mb-24">
       <a href="collab-for-chrome" class="app-logo-link branding-wrapper">
         <img src="https://raw.githubusercontent.com/yugalone/yugal.one/main/collab/branding/Collab-500px-fit.svg" alt="Collab logo" class="app-logo">
         <div class="title">for Chrome</div>
       </a>
     </div>
-
+    
     <h2 id="philosophy">Culture</h2>
     <p>
       Minimalism, for me, is not a design preference&mdash;it is a way of living and working. It means stripping away what is unnecessary so that what truly matters becomes obvious, whether in how a day is structured, a decision is made, or a system is designed. The same mindset that avoids clutter in interfaces also avoids clutter in thinking: clear priorities, fewer moving parts, and a strong bias toward simplicity that still respects real-world complexity. The approach is simple: identify the gap between what businesses need and what existing tools provide, then build scalable solutions using accessible technology like AppSheet that don't sacrifice enterprise-grade functionality.
     </p>
-
     <p>
       This life choice naturally shows up in the things built around it. The clean layouts, limited surfaces, and deliberate use of space in both my web presence and product interfaces are just visible expressions of a deeper principle: clarity over noise, intent over decoration, function over abstraction. Minimalism, in that sense, is less about how something looks and more about how it behaves&mdash;how quickly someone can understand it, trust it, and get out of its way to focus on their actual work.
     </p>
   </main>
+  
+  <div class="scroll-controls">
+    <button id="scroll-up" class="scroll-btn" aria-label="Scroll to top">↑</button>
+    <button id="scroll-down" class="scroll-btn" aria-label="Scroll to bottom">↓</button>
+  </div>
 
   <footer>
     <div class="footer-inner">
@@ -107,6 +100,20 @@
         });
       });
     });
+
+    // Lenis Scroll Controls
+    const scrollUpBtn = document.getElementById('scroll-up');
+    const scrollDownBtn = document.getElementById('scroll-down');
+
+    if (scrollUpBtn && scrollDownBtn) {
+      scrollUpBtn.addEventListener('click', () => {
+        lenis.scrollTo(0);
+      });
+
+      scrollDownBtn.addEventListener('click', () => {
+        lenis.scrollTo('bottom');
+      });
+    }
   </script>
 </body>
 </html>

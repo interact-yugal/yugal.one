@@ -55,6 +55,11 @@
     </ul>
   </main>
 
+  <div class="scroll-controls">
+    <button id="scroll-up" class="scroll-btn" aria-label="Scroll to top">↑</button>
+    <button id="scroll-down" class="scroll-btn" aria-label="Scroll to bottom">↓</button>
+  </div>
+
   <footer>
     <div class="footer-inner">
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGfVYYC7NUIipL3ScGCyAtTzJAMvPHo81XvtdLDvgKhzW56Q/viewform?usp=header" class="secondary" target="_blank" rel="noopener">Drop a message</a>
@@ -63,31 +68,45 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-  <script>
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      lerp: 0.1
-    });
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script>
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        lerp: 0.1
+      });
 
-    function raf(time) {
-      lenis.raf(time);
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
       requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
 
-    // Smooth scrolling for anchor links utilizing Lenis with offset
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        lenis.scrollTo(this.getAttribute('href'), {
-          offset: -100 // Adds a 100px buffer so the heading clears the fixed navbar
+      // Smooth scrolling for anchor links utilizing Lenis with offset
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          lenis.scrollTo(this.getAttribute('href'), {
+            offset: -100 // Adds a 100px buffer so the heading clears the fixed navbar
+          });
         });
       });
-    });
-  </script>
-</body>
-</html>
+
+      // Lenis Scroll Controls
+      const scrollUpBtn = document.getElementById('scroll-up');
+      const scrollDownBtn = document.getElementById('scroll-down');
+
+      if (scrollUpBtn && scrollDownBtn) {
+        scrollUpBtn.addEventListener('click', () => {
+          lenis.scrollTo(0);
+        });
+
+        scrollDownBtn.addEventListener('click', () => {
+          lenis.scrollTo('bottom');
+        });
+      }
+    </script>
+  </body>
+  </html>

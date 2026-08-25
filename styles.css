@@ -363,10 +363,44 @@ footer {
   white-space: nowrap;
 }
 
+/* ==========================================================================
+   Scroll Controls
+   ========================================================================== */
+.scroll-controls {
+  position: fixed;
+  top: 50%;
+  left: 24px; /* Changed from right to left */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 999;
+}
+
+.scroll-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666666;
+  text-align: center;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.scroll-btn:hover {
+  color: #000000;
+  opacity: 1;
+}
+
+/* Hide on mobile to prevent text blocking */
 @media screen and (max-width: 600px) {
-  .nav-inner {
-    align-items: flex-start;
+  .scroll-controls {
+    display: none;
   }
+}
 
   .nav-links {
     flex-wrap: wrap;
