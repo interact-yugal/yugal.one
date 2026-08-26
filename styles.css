@@ -112,6 +112,10 @@ p {
   margin-bottom: 24px;
 }
 
+.branding-wrapper .title {
+  margin-bottom: 0;
+}
+
 .subtitle {
   font-size: 15px;
   font-weight: 500;
