@@ -104,6 +104,14 @@ p {
   line-height: 1.7;
 }
 
+.title {
+  font-size: 27px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
 .subtitle {
   font-size: 15px;
   font-weight: 500;
