@@ -63,16 +63,17 @@ body {
 }
 
 .nav-tab {
-  font-weight: 500;
-  color: #666666;
-  text-decoration: none;
-  transition: color 0.2s ease;
-  padding: 8px 0;
+  color: inherit;
+  font-weight: 400;
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 0, 0, 0.2);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.4em;
+  transition: text-decoration-color 0.2s ease, opacity 0.2s ease;
 }
 
 .nav-tab:hover {
-  color: #000000;
-  opacity: 1;
+  opacity: 0.6;
 }
 
 h1,
@@ -90,8 +91,8 @@ h1 {
 }
 
 h2 {
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
   line-height: 1.4;
   margin-top: 48px;
   letter-spacing: -0.01em;
@@ -118,7 +119,7 @@ p {
 
 .subtitle {
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 400;
   margin-top: -20px;
   margin-bottom: 24px;
   color: #666666;
@@ -135,7 +136,6 @@ p {
 .app-logo-link {
   display: inline-block;
   line-height: 0;
-  text-decoration: none;
 }
 
 .app-logo {
@@ -153,7 +153,7 @@ p {
 .branding-text {
   font-size: 14px;
   color: #666666;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .branding-logo {
@@ -162,10 +162,13 @@ p {
 }
 
 a {
-  color: #000000;
-  text-decoration: none;
-  font-weight: 700;
-  transition: opacity 0.15s ease;
+  color: inherit;
+  font-weight: 400;
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 0, 0, 0.2);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.4em;
+  transition: text-decoration-color 0.2s ease, opacity 0.2s ease;
 }
 
 a:hover {
@@ -173,7 +176,7 @@ a:hover {
 }
 
 a.secondary {
-  font-weight: 400;
+  font-weight: 600;
 }
 
 ul {
@@ -199,14 +202,6 @@ li:before {
   margin: 32px 0;
 }
 
-.podcast-label {
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-bottom: 12px;
-}
-
 .language-switch {
   display: inline-flex;
   background-color: #f5f5f5;
@@ -224,7 +219,7 @@ li:before {
   border-radius: 9999px;
   cursor: pointer;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 400;
   color: #666666;
 }
 
@@ -396,15 +391,14 @@ footer {
   cursor: pointer;
   font-family: inherit;
   font-size: 14px;
-  font-weight: 500;
-  color: #666666;
+  font-weight: 400;
+  color: #000000;
   text-align: center;
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 .scroll-btn:hover {
-  color: #000000;
-  opacity: 1;
+  opacity: 0.6;
 }
 
 /* Hide on mobile to prevent text blocking */
@@ -412,7 +406,6 @@ footer {
   .scroll-controls {
     display: none;
   }
-}
 
   .nav-links {
     flex-wrap: wrap;
