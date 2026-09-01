@@ -66,7 +66,6 @@
           
           <div class="player-meta">
             <span class="podcast-title">The Collab Experience</span>
-            <span class="podcast-duration" id="podcast-dur">00:00</span>
           </div>
         </div>
 
@@ -188,7 +187,6 @@
     const progressInput = document.getElementById('audio-progress');
     const currentTimeDisp = document.getElementById('current-time');
     const totalTimeDisp = document.getElementById('total-time');
-    const podcastDurDisp = document.getElementById('podcast-dur');
 
     function formatTime(secs) {
       if (isNaN(secs)) return "00:00"; 
@@ -201,7 +199,6 @@
     function updateDuration() {
         const formattedTotal = formatTime(audio.duration);
         totalTimeDisp.textContent = formattedTotal;
-        podcastDurDisp.textContent = formattedTotal;
     }
 
     // Listen for loadedmetadata which is fired when audio file changes

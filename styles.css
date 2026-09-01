@@ -275,17 +275,17 @@ li:before {
   line-height: 1.2;
 }
 
-.podcast-duration {
-  font-size: 12px;
-  color: #666666;
-  margin-top: 2px;
-}
-
 .player-progress-bar {
   display: flex;
   align-items: center;
   gap: 12px;
   width: 100%;
+}
+
+.player-time-display {
+  font-size: 12px;
+  font-weight: 400;
+  color: #666666;
 }
 
 .progress-slider-container {
