@@ -54,7 +54,8 @@
 
       <div class="podcast-section">
         <div class="custom-audio-player">
-          <audio id="podcast-audio" preload="metadata"></audio>
+          <!-- Default audio source set to English -->
+          <audio id="podcast-audio" src="./assets/audio/audio-podcast-english.m4a" preload="metadata"></audio>
           
           <div class="player-controls">
             <button class="play-pause-btn" id="play-btn" aria-label="Play/Pause">
@@ -78,6 +79,7 @@
         </div>
 
         <div class="language-switch">
+          <!-- Data attributes pointing to the local assets folder -->
           <input type="radio" id="lang-en" name="podcast-lang" value="en" data-src="./assets/audio/audio-podcast-english.m4a" checked>
           <label for="lang-en">English</label>
           
