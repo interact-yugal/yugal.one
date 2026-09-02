@@ -4,16 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Collab for Chrome</title>
-  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/yugalone/yugal.one/main/collab/branding/Collab-500px-fit.png">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="../collab/branding/Collab-500px-fit.png">
   <link rel="stylesheet" href="../styles.css">
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="../app.js" defer></script>
 </head>
-
 <body>
   <nav class="top-nav">
     <div class="nav-inner">
@@ -27,86 +26,51 @@
   <header>
     <div class="header-branding">
       <a href="https://www.yugal.one/collab-for-chrome" class="app-logo-link branding-wrapper">
-        <img src="https://raw.githubusercontent.com/yugalone/yugal.one/main/collab-for-chrome/branding/Collab-for-Chrome-500px-fit.png" alt="Collab logo" class="app-logo">
+        <img src="./branding/Collab-for-Chrome-500px-fit.png" alt="Collab logo" class="app-logo">
       </a>
     </div>
-</header>
+  </header>
 
   <main>
-    <p>
-      A lightweight extension designed to subtly elevate your AppSheet experience, seamlessly integrating into your workflow.
-    </p>
+    <section class="intro-section">
+      <p>
+        A lightweight extension designed to subtly elevate your AppSheet experience, seamlessly integrating into your workflow.
+      </p>
+      <p>
+        <a href="https://chromewebstore.google.com/detail/collab-for-chrome/ghmnekemeadgbjimdfccgjlclhdleaef" class="secondary" target="_blank" rel="noopener">Add to Chrome</a>
+      </p>
+      <div class="video-placeholder">
+        <iframe src="https://www.youtube.com/embed/HgTk--aEZ_w" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
 
-    <p>
-      <a href="https://chromewebstore.google.com/detail/collab-for-chrome/ghmnekemeadgbjimdfccgjlclhdleaef" class="secondary" target="_blank" rel="noopener">Add to Chrome</a>
-    </p>
-
-    <div class="video-placeholder">
-      <iframe src="https://www.youtube.com/embed/HgTk--aEZ_w" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-
-    <h2 id="features">Features</h2>
-    <ul>
-      <li>Auto-sync: Keep your data up to date by turning on auto-sync and setting a sync interval that suits your needs.</li>
-      <li>Sleek typography: Elevate your interface with a simple switch that applies the <a href="https://rsms.me/inter/" target="_blank" rel="noopener">Inter</a> font across the system, delivering a clean and minimalist visual experience.</li>
-      <li>Seamless printing: Effortlessly print your table and deck views that preserve all filters, groupings, and their corresponding aggregates, while seamlessly embedding your branding, title and metadata.</li>
-      <li>100% local & secure: Process the data directly within your browser, ensuring your data is never transmitted to external servers.</li>
-    </ul>
+    <section id="features-section">
+      <h2 id="features">Features</h2>
+      <ul>
+        <li>Auto-sync: Keep your data up to date by turning on auto-sync and setting a sync interval that suits your needs.</li>
+        <li>Sleek typography: Elevate your interface with a simple switch that applies the <a href="https://rsms.me/inter/" target="_blank" rel="noopener">Inter</a> font across the system, delivering a clean and minimalist visual experience.</li>
+        <li>Seamless printing: Effortlessly print your table and deck views that preserve all filters, groupings, and their corresponding aggregates, while seamlessly embedding your branding, title and metadata.</li>
+        <li>100% local & secure: Process the data directly within your browser, ensuring your data is never transmitted to external servers.</li>
+      </ul>
+    </section>
   </main>
 
   <div class="scroll-controls">
-    <button id="scroll-up" class="scroll-btn" aria-label="Scroll to top">↑</button>
-    <button id="scroll-down" class="scroll-btn" aria-label="Scroll to bottom">↓</button>
+    <button id="scroll-up" class="scroll-btn" aria-label="Scroll to top">
+      <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+    <button id="scroll-down" class="scroll-btn" aria-label="Scroll to bottom">
+      <span class="material-symbols-rounded">keyboard_arrow_down</span>
+    </button>
   </div>
 
   <footer>
     <div class="footer-inner">
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGfVYYC7NUIipL3ScGCyAtTzJAMvPHo81XvtdLDvgKhzW56Q/viewform?usp=header" target="_blank" rel="noopener">Drop a message</a>
-      <a href="mailto:yugal@yugal.one" target="_blank" rel="noopener">Email</a>
+      <a href="mailto:contact@yugal.one" target="_blank" rel="noopener">Email</a>
       <a href="https://docs.google.com/document/d/1KHX0Tcjx9gS5NNULNvbYvJ0vAThQ9x8rdFal0Skb4IE/view" target="_blank" rel="noopener">Privacy Policy</a>
       <a href="https://docs.google.com/document/d/1Fwm34gjX_wXDCMmwQu9NMdA1nTDuhHHRfxD13suxCCE/view" target="_blank" rel="noopener">Terms of Service</a>
     </div>
   </footer>
-
-    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-    <script>
-      const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        smoothWheel: true,
-        wheelMultiplier: 1,
-        lerp: 0.1
-      });
-
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
-
-      // Smooth scrolling for anchor links utilizing Lenis with offset
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          lenis.scrollTo(this.getAttribute('href'), {
-            offset: -100 // Adds a 100px buffer so the heading clears the fixed navbar
-          });
-        });
-      });
-
-      // Lenis Scroll Controls
-      const scrollUpBtn = document.getElementById('scroll-up');
-      const scrollDownBtn = document.getElementById('scroll-down');
-
-      if (scrollUpBtn && scrollDownBtn) {
-        scrollUpBtn.addEventListener('click', () => {
-          lenis.scrollTo(0);
-        });
-
-        scrollDownBtn.addEventListener('click', () => {
-          lenis.scrollTo('bottom');
-        });
-      }
-    </script>
-  </body>
-  </html>
+</body>
+</html>

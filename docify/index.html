@@ -4,16 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Docify</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/yugalone/yugal.one/main/docify/branding/Docify-500px-fit.png">
-
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="./branding/Docify-500px-fit.png">
   <link rel="stylesheet" href="../styles.css">
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="../app.js" defer></script>
 </head>
-
 <body>
   <nav class="top-nav">
     <div class="nav-inner">
@@ -24,77 +23,40 @@
   <header>
     <div class="header-branding">
       <a href="https://www.yugal.one/docify" class="app-logo-link">
-        <img src="https://raw.githubusercontent.com/yugalone/yugal.one/main/docify/branding/Docify-500px-fit.png" alt="Docify logo" class="app-logo">
+        <img src="./branding/Docify-500px-fit.png" alt="Docify logo" class="app-logo">
       </a>
     </div>
     <div class="subtitle">Shutdown</div>
   </header>
 
   <main>
-    <p>
-      Docify was conceived as an advanced, fully functional document generation and workflow-sharing web application. Designed to automate and streamline complex document pipelines, Docify was built from scratch as a single-page application (SPA) using Google Apps Script. It successfully showcased the ability to stitch together bespoke interfaces with Google Workspace and Firebase Firestore, offering users a dedicated tool for managing high-volume document creation.
-    </p>
-
-    <p>
-      Despite its functional success, Docify was ultimately sunsetted because its underlying architecture was leading towards compounding technical debt. Building an enterprise-level SaaS relying entirely on bespoke scripting without natively scalable infrastructure meant constantly battling strict execution quotas and hitting the ceiling of unstructured environments. As the codebase expanded to juggle between authentication, licensing, quota management, and intricate workflows, the maintenance burden skyrocketed.
-    </p>
-
-    <p>
-      While it succeeded brilliantly as a proof of concept, Docify ultimately required a transition to dedicated cloud infrastructure to support its true scale.
-    </p>
+    <section class="intro-section">
+      <p>
+        Docify was conceived as an advanced, fully functional document generation and workflow-sharing web application. Designed to automate and streamline complex document pipelines, Docify was built from scratch as a single-page application (SPA) using Google Apps Script. It successfully showcased the ability to stitch together bespoke interfaces with Google Workspace and Firebase Firestore, offering users a dedicated tool for managing high-volume document creation.
+      </p>
+      <p>
+        Despite its functional success, Docify was ultimately sunsetted because its underlying architecture was leading towards compounding technical debt. Building an enterprise-level SaaS relying entirely on bespoke scripting without natively scalable infrastructure meant constantly battling strict execution quotas and hitting the ceiling of unstructured environments. As the codebase expanded to juggle between authentication, licensing, quota management, and intricate workflows, the maintenance burden skyrocketed.
+      </p>
+      <p>
+        While it succeeded brilliantly as a proof of concept, Docify ultimately required a transition to dedicated cloud infrastructure to support its true scale.
+      </p>
+    </section>
   </main>
 
   <div class="scroll-controls">
-    <button id="scroll-up" class="scroll-btn" aria-label="Scroll to top">↑</button>
-    <button id="scroll-down" class="scroll-btn" aria-label="Scroll to bottom">↓</button>
+    <button id="scroll-up" class="scroll-btn" aria-label="Scroll to top">
+      <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+    <button id="scroll-down" class="scroll-btn" aria-label="Scroll to bottom">
+      <span class="material-symbols-rounded">keyboard_arrow_down</span>
+    </button>
   </div>
 
   <footer>
     <div class="footer-inner">
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGfVYYC7NUIipL3ScGCyAtTzJAMvPHo81XvtdLDvgKhzW56Q/viewform?usp=header" target="_blank" rel="noopener">Drop a message</a>
-      <a href="mailto:yugal@yugal.one" target="_blank" rel="noopener">Email</a>
+      <a href="mailto:contact@yugal.one" target="_blank" rel="noopener">Email</a>
     </div>
   </footer>
-
-    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-    <script>
-      const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        smoothWheel: true,
-        wheelMultiplier: 1,
-        lerp: 0.1
-      });
-
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
-
-      // Smooth scrolling for anchor links utilizing Lenis with offset
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          lenis.scrollTo(this.getAttribute('href'), {
-            offset: -100 // Adds a 100px buffer so the heading clears the fixed navbar
-          });
-        });
-      });
-
-      // Lenis Scroll Controls
-      const scrollUpBtn = document.getElementById('scroll-up');
-      const scrollDownBtn = document.getElementById('scroll-down');
-
-      if (scrollUpBtn && scrollDownBtn) {
-        scrollUpBtn.addEventListener('click', () => {
-          lenis.scrollTo(0);
-        });
-
-        scrollDownBtn.addEventListener('click', () => {
-          lenis.scrollTo('bottom');
-        });
-      }
-    </script>
-  </body>
-  </html>
+</body>
+</html>

@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Collab</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
-
-  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/yugalone/yugal.one/main/collab/branding/Collab-500px-fit.png">
-  
+  <link rel="icon" type="image/x-icon" href="./branding/Collab-500px-fit.png">
   <link rel="stylesheet" href="../styles.css">
+  
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="../app.js" defer></script>
 </head>
 <body>
   <nav class="top-nav">
@@ -28,248 +28,121 @@
   <header>
     <div class="header-branding">
       <a href="https://www.yugal.one/collab" class="app-logo-link">
-        <img src="https://raw.githubusercontent.com/yugalone/yugal.one/main/collab/branding/Collab-500px-fit.png" alt="Collab logo" class="app-logo">
+        <img src="./branding/Collab-500px-fit.png" alt="Collab logo" class="app-logo">
       </a>
       <a href="https://about.appsheet.com" target="_blank" rel="noopener" class="branding-wrapper">
         <span class="branding-text">Powered by</span>
-        <img src="https://raw.githubusercontent.com/yugalone/yugal.one/main/branding/AppSheet.png" alt="AppSheet logo" class="branding-logo">
+        <img src="../branding/AppSheet.png" alt="AppSheet logo" class="branding-logo">
       </a>
     </div>
   </header>
 
   <main>
-    <p>
-      Experience across finance, accounting, and auditing surfaced a recurring pattern: teams needed dependable workflow automation, but tools were either too rigid or too complex to implement. That gap led to building Collab—an application at the intersection of finance, operations, and design that turns real business logic into scalable, no-code workflows.
-    </p>
+    <section class="intro-section">
+      <p>
+        Experience across finance, accounting, and auditing surfaced a recurring pattern: teams needed dependable workflow automation, but tools were either too rigid or too complex to implement. That gap led to building Collab an application at the intersection of finance, operations, and design that turns real business logic into scalable, no-code workflows.
+      </p>
+      <p>
+        The problem is fundamental: organizations run on interconnected workflows, but most tools force teams into fragmented systems. Instead of juggling separate applications for contacts, inventory, production, accounting, and documentation, Collab unifies everything in one place where data, processes, and teams operate seamlessly, and each workflow flows naturally into the next.
+      </p>
+      <p>
+        Built on a multi-tenant architecture, each organization gets its own isolated environment with centralized governance where it matters. System and public servers maintain common logic and controlled collaboration, while client servers handle operational workloads with strict data partitioning. Layered security combining authentication, licensing, and hybrid server design ensures every action is authorized, auditable, and role-based.
+      </p>
+      <p>
+        The result: enterprise-grade structure without traditional development overhead. Powered by relational modeling, automated workflows, and standardized design patterns, Collab lets organizations deploy quickly, scale cleanly, and maintain operational integrity staying practical as they grow, without sacrificing the flexibility to evolve.
+      </p>
 
-    <p>
-      The problem is fundamental: organizations run on interconnected workflows, but most tools force teams into fragmented systems. Instead of juggling separate applications for contacts, inventory, production, accounting, and documentation, Collab unifies everything in one place—where data, processes, and teams operate seamlessly, and each workflow flows naturally into the next.
-    </p>
-
-    <p>
-      Built on a multi-tenant architecture, each organization gets its own isolated environment with centralized governance where it matters. System and public servers maintain common logic and controlled collaboration, while client servers handle operational workloads with strict data partitioning. Layered security—combining authentication, licensing, and hybrid server design—ensures every action is authorized, auditable, and role-based.
-    </p>
-
-    <p>
-      The result: enterprise-grade structure without traditional development overhead. Powered by relational modeling, automated workflows, and standardized design patterns, Collab lets organizations deploy quickly, scale cleanly, and maintain operational integrity—staying practical as they grow, without sacrificing the flexibility to evolve.
-    </p>
-
-    <div class="podcast-section">    
-      <div class="custom-audio-player">
-        <audio id="podcast-audio" src="audio-podcast-english.m4a" preload="metadata"></audio>
-        
-        <div class="player-controls">
-          <button class="play-pause-btn" id="play-btn" aria-label="Play/Pause">
-            <span id="play-icon" class="material-symbols-rounded">play_circle</span>
-            <span id="pause-icon" class="material-symbols-rounded">pause_circle</span>
-          </button>
+      <div class="podcast-section">
+        <div class="custom-audio-player">
+          <audio id="podcast-audio" preload="metadata"></audio>
           
-          <div class="player-meta">
-            <span class="podcast-title">The Collab Experience</span>
+          <div class="player-controls">
+            <button class="play-pause-btn" id="play-btn" aria-label="Play/Pause">
+              <span id="play-icon" class="material-symbols-rounded">play_circle</span>
+              <span id="pause-icon" class="material-symbols-rounded">pause_circle</span>
+            </button>
+            
+            <div class="player-meta">
+              <span class="podcast-title">The Collab Experience</span>
+            </div>
+          </div>
+
+          <div class="player-progress-bar">
+            <span class="player-time-display" id="current-time">00:00</span>
+            <div class="progress-slider-container" id="slider-container">
+              <div class="progress-slider-filled" id="slider-filled"></div>
+              <input type="range" class="progress-slider-input" id="audio-progress" min="0" max="100" value="0">
+            </div>
+            <span class="player-time-display" id="total-time">00:00</span>
           </div>
         </div>
 
-        <div class="player-progress-bar">
-          <span class="player-time-display" id="current-time">00:00</span>
-          <div class="progress-slider-container" id="slider-container">
-            <div class="progress-slider-filled" id="slider-filled"></div>
-            <input type="range" class="progress-slider-input" id="audio-progress" min="0" max="100" value="0">
-          </div>
-          <span class="player-time-display" id="total-time">00:00</span>
-        </div>
-      </div>
-
-      <div class="language-switch">
-          <input type="radio" id="lang-en" name="podcast-lang" value="en" checked>
+        <div class="language-switch">
+          <input type="radio" id="lang-en" name="podcast-lang" value="en" data-src="./assets/audio/audio-podcast-english.m4a" checked>
           <label for="lang-en">English</label>
           
-          <input type="radio" id="lang-hi" name="podcast-lang" value="hi">
+          <input type="radio" id="lang-hi" name="podcast-lang" value="hi" data-src="./assets/audio/audio-podcast-hindi.m4a">
           <label for="lang-hi">Hindi</label>
+        </div>
       </div>
-    </div>
+      
+      <p>
+        <a href="https://www.appsheet.com/newshortcut/bf93ddae-3058-4d7c-acee-fd0df4ad7178" class="secondary" target="_blank" rel="noopener">Explore Collab</a>
+      </p>
+    </section>
 
-    <p>
-      <a href="https://www.appsheet.com/newshortcut/bf93ddae-3058-4d7c-acee-fd0df4ad7178" class="secondary" target="_blank" rel="noopener">Explore Collab</a>
-    </p>
+    <section id="why-collab-section">
+      <h2 id="why-collab">Why Collab?</h2>
+      <ul>
+        <li>Unified operational features: Eliminates fragmented systems by seamlessly integrating your contacts, inventory, manufacturing, accounting, and documents into one natural workflow.</li>
+        <li>No-code enterprise scalability: Delivers sophisticated, enterprise-grade structure without the traditional complexity or development overhead.</li>
+        <li>Hybrid server architecture: Separates universal system logic from isolated client configurations, granting each organization autonomous operational control and strict data partitioning.</li>
+        <li>Account lifecycle control: Supports both perpetual accounts and periodic accounts with migration & archiving capabilities for load balancing and controlled historical access.</li>
+        <li>Role-based licensing model: Ensures secure, role-based access control across the organization to facilitate integrated approval workflows, ensuring accountability and transparency.</li>
+        <li>Layered security framework: Enforces an enterprise-grade security through a two-level process combining Google Sign-in with proprietary entity-level and license-level authentication.</li>
+      </ul>
+    </section>
 
-    <h2 id="why-collab">Why Collab?</h2>
-    <ul>
-      <li>Unified operational features: Eliminates fragmented systems by seamlessly integrating your contacts, inventory, manufacturing, accounting, and documents into one natural workflow.</li>
-      <li>No-code enterprise scalability: Delivers sophisticated, enterprise-grade structure without the traditional complexity or development overhead.</li>
-      <li>Hybrid server architecture: Separates universal system logic from isolated client configurations, granting each organization autonomous operational control and strict data partitioning.</li>
-      <li>Account lifecycle control: Supports both perpetual accounts and periodic accounts with migration & archiving capabilities for load balancing and controlled historical access.</li>
-      <li>Role-based licensing model: Ensures secure, role-based access control across the organization to facilitate integrated approval workflows, ensuring accountability and transparency.</li>
-      <li>Layered security framework: Enforces an enterprise-grade security through a two-level process combining Google Sign-in with proprietary entity-level and license-level authentication.</li>
-    </ul>
+    <section id="features-section">
+      <h2 id="operational-features">Features</h2>
+      <ul>
+        <li>Contacts directory: Centralize your internal and external stakeholders into a single, authoritative source of truth, equipped to link multiple bank accounts and dedicated assets directly to each profile.</li>
+        <li>Inventory management: Track item availability, product lifecycles, and dynamic pricing through advanced categorization and grouping.</li>
+        <li>Bill of materials: Define products by listing required raw materials, and quantities for production.</li>
+        <li>Movement tracking: Monitor and capture inventory transit, stock adjustments and transfers on the fly.</li>
+        <li>Manufacturing: Orchestrate complex, multi-tiered production workflows that are intricately linked to live inventory data.</li>
+        <li>Chart of accounts: Record financial transactions within a defined hierarchy to achieve granular visibility across all fiscal activities.</li>
+        <li>Financial reporting: Bridge financial records with inventory movements so your financials reflect true operational reality.</li>
+        <li>Document management: Centralize your documents in a single workspace to streamline context, collaboration, and document flow.</li>
+        <li>Ticketing: Manage, track, and resolve internal and external requests, tasks, or issues efficiently to ensure timely support.</li>
+      </ul>
+    </section>
 
-    <h2 id="operational-features">Features</h2>
-    <ul>
-      <li>Contacts directory: Centralize your internal and external stakeholders into a single, authoritative source of truth, equipped to link multiple bank accounts and dedicated assets directly to each profile.</li>
-      <li>Inventory management: Track item availability, product lifecycles, and dynamic pricing through advanced categorization and grouping.</li>
-      <li>Bill of materials: Define products by listing required raw materials, and quantities for production.</li>
-      <li>Movement tracking: Monitor and capture inventory transit, stock adjustments and transfers on the fly.</li>
-      <li>Manufacturing: Orchestrate complex, multi-tiered production workflows that are intricately linked to live inventory data.</li>
-      <li>Chart of accounts: Record financial transactions within a defined hierarchy to achieve granular visibility across all fiscal activities.</li>
-      <li>Financial reporting: Bridge financial records with inventory movements so your financials reflect true operational reality.</li>
-      <li>Document management: Centralize your documents in a single workspace to streamline context, collaboration, and document flow.</li>
-      <li>Ticketing: Manage, track, and resolve internal and external requests, tasks, or issues efficiently to ensure timely support.</li>
-    </ul>
-
-    <p>
-      Deploy quickly, scale cleanly, and keep operational integrity&mdash;without traditional development overhead. Designed for connected workflows across teams and functions to standardize repeatable operations with structured logic and controlled execution paths.
-    </p>
+    <section class="closing-section">
+      <p>
+        Deploy quickly, scale cleanly, and keep operational integrity&mdash;without traditional development overhead. Designed for connected workflows across teams and functions to standardize repeatable operations with structured logic and controlled execution paths.
+      </p>
+    </section>
   </main>
 
   <div class="scroll-controls">
-    <button id="scroll-up" class="scroll-btn" aria-label="Scroll to top">↑</button>
-    <button id="scroll-down" class="scroll-btn" aria-label="Scroll to bottom">↓</button>
+    <button id="scroll-up" class="scroll-btn" aria-label="Scroll to top">
+      <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+    <button id="scroll-down" class="scroll-btn" aria-label="Scroll to bottom">
+      <span class="material-symbols-rounded">keyboard_arrow_down</span>
+    </button>
   </div>
 
   <footer>
     <div class="footer-inner">
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGfVYYC7NUIipL3ScGCyAtTzJAMvPHo81XvtdLDvgKhzW56Q/viewform?usp=header" target="_blank" rel="noopener">Drop a message</a>
-      <a href="mailto:yugal@yugal.one" target="_blank" rel="noopener">Email</a>
+      <a href="mailto:contact@yugal.one" target="_blank" rel="noopener">Email</a>
       <a href="https://www.appsheet.com/appinfo/privacypolicy?appId=bf93ddae-3058-4d7c-acee-fd0df4ad7178" target="_blank" rel="noopener">Privacy Policy</a>
       <a href="https://www.appsheet.com/appinfo/termsofuse?appId=bf93ddae-3058-4d7c-acee-fd0df4ad7178" target="_blank" rel="noopener">Terms of Service</a>
       <a href="https://www.appsheet.com/oss/notices" target="_blank" rel="noopener">Licenses</a>
       <a href="https://docs.google.com/document/d/1cQCoJSOLtqBrQV1VKXBtCzZl-uBbQOXwUK45vlxbEdI/view" target="_blank" rel="noopener">App Documentation</a>
     </div>
   </footer>
-
-  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-  <script>
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      lerp: 0.1
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    // Smooth scrolling for anchor links utilizing Lenis with offset
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        lenis.scrollTo(this.getAttribute('href'), {
-          offset: -100 // Adds a 100px buffer so the heading clears the fixed navbar
-        });
-      });
-    });
-
-    // Lenis Scroll Controls
-    const scrollUpBtn = document.getElementById('scroll-up');
-    const scrollDownBtn = document.getElementById('scroll-down');
-
-    if (scrollUpBtn && scrollDownBtn) {
-      scrollUpBtn.addEventListener('click', () => {
-        lenis.scrollTo(0);
-      });
-
-      scrollDownBtn.addEventListener('click', () => {
-        lenis.scrollTo('bottom');
-      });
-    }
-
-    // Audio Player Functionality
-    const audio = document.getElementById('podcast-audio');
-    const playBtn = document.getElementById('play-btn');
-    const playIcon = document.getElementById('play-icon');
-    const pauseIcon = document.getElementById('pause-icon');
-    const sliderContainer = document.getElementById('slider-container');
-    const sliderFilled = document.getElementById('slider-filled');
-    const progressInput = document.getElementById('audio-progress');
-    const currentTimeDisp = document.getElementById('current-time');
-    const totalTimeDisp = document.getElementById('total-time');
-
-    function formatTime(secs) {
-      if (isNaN(secs)) return "00:00"; 
-      const minutes = Math.floor(secs / 60);
-      const seconds = Math.floor(secs % 60);
-      return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-    }
-
-    // Function to update duration displays
-    function updateDuration() {
-        const formattedTotal = formatTime(audio.duration);
-        totalTimeDisp.textContent = formattedTotal;
-    }
-
-    // Listen for loadedmetadata which is fired when audio file changes
-    audio.addEventListener('loadedmetadata', updateDuration);
-
-    if (audio.readyState >= 1) {
-       updateDuration();
-    }
-
-    playBtn.addEventListener('click', () => {
-      if (audio.paused) {
-        audio.play();
-        playIcon.style.display = 'none';
-        pauseIcon.style.display = 'block';
-      } else {
-        audio.pause();
-        playIcon.style.display = 'block';
-        pauseIcon.style.display = 'none';
-      }
-    });
-
-    audio.addEventListener('timeupdate', () => {
-      const percentage = (audio.currentTime / audio.duration) * 100;
-      progressInput.value = percentage || 0;
-      sliderFilled.style.width = `${percentage}%`;
-      currentTimeDisp.textContent = formatTime(audio.currentTime);
-    });
-
-    progressInput.addEventListener('input', (e) => {
-      const seekTime = (e.target.value / 100) * audio.duration;
-      audio.currentTime = seekTime;
-      sliderFilled.style.width = `${e.target.value}%`;
-    });
-
-    audio.addEventListener('ended', () => {
-      playIcon.style.display = 'block';
-      pauseIcon.style.display = 'none';
-      progressInput.value = 0;
-      sliderFilled.style.width = '0%';
-      currentTimeDisp.textContent = '00:00';
-    });
-    
-    // Logic for Language Switcher
-    const languageRadios = document.querySelectorAll('input[name="podcast-lang"]');
-    
-    languageRadios.forEach(radio => {
-        radio.addEventListener('change', (e) => {
-            const selectedLang = e.target.value;
-            const wasPlaying = !audio.paused;
-            
-            if (selectedLang === 'en') {
-                audio.src = 'audio-podcast-english.m4a';
-            } else if (selectedLang === 'hi') {
-                audio.src = 'audio-podcast-hindi.m4a';
-            }
-            
-            audio.load();
-            
-            progressInput.value = 0;
-            sliderFilled.style.width = '0%';
-            currentTimeDisp.textContent = '00:00';
-            
-            if(wasPlaying) {
-                 audio.play();
-                 playIcon.style.display = 'none';
-                 pauseIcon.style.display = 'block';
-            } else {
-                 playIcon.style.display = 'block';
-                 pauseIcon.style.display = 'none';
-            }
-        });
-    });
-  </script>
 </body>
 </html>
